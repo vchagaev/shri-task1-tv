@@ -1,0 +1,14 @@
+.footer__wrapper {
+    width: 94%;
+    margin: 0 auto;
+}
+
+.footer {
+    border-top: 10px solid #eae9e8;
+    box-shadow: 0 0 50px 10px rgb(242, 242, 242);
+}
+
+.footer__logo {
+    margin:10px auto;
+    float: right;
+}

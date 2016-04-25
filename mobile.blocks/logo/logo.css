@@ -1,0 +1,14 @@
+.logo {
+    margin: 5px auto;
+
+}
+
+.logo__text {
+    font-size: 27px;
+    line-height: 39px;
+}
+
+.logo__letter {
+    color: red;
+    font-weight: 200;
+}

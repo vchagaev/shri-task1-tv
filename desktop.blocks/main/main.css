@@ -1,0 +1,7 @@
+@media screen and (min-width: 1350px) {
+
+    .main__wrapper {
+        width: 1350px;
+        margin: 0 auto;
+    }
+}

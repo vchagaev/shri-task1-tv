@@ -1,0 +1,5 @@
+@media screen and (min-width: 600px) {
+    .logo__text {
+        font-size: 32px;
+    }
+}

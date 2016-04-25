@@ -1,0 +1,10 @@
+.tv-channel {
+    display: inline-block;
+    vertical-align: top;
+    width:100%;
+}
+
+.tv-channel__header {
+    margin-bottom: 10px;
+    overflow: hidden;
+}

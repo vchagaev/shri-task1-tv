@@ -1,0 +1,21 @@
+.tv-link:hover {
+    color: red !important;
+}
+
+.tv-link__tooltip {
+    width: 250px;
+    border: 1px solid black;
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 50px 10px rgb(242, 242, 242);
+}
+
+.tv-link__tooltip_hidden {
+    display: none;
+}
+
+.tv-link__image {
+    width: 100%;
+    height: auto;
+}

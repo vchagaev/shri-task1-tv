@@ -1,0 +1,24 @@
+@media screen and (min-width: 600px) {
+    .tv-layout {
+        font-size: 0;
+    }
+    .tv-layout__item {
+        display: inline-block;
+        width: 47%;
+        border: none;
+        box-sizing: border-box;
+        margin-bottom: 40px;
+    }
+
+}
+@media screen and (min-width: 980px) {
+    .tv-layout__item {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tv-layout__item {
+        width: 25%;
+    }
+}

@@ -1,0 +1,12 @@
+.days__item {
+    display: inline-block;
+    border-right: 1px solid rgb(240, 240, 240);
+    font-size: 16px;
+}
+.days__item_mediu:nth-child(7) {
+    border-right: none;
+}
+.days_horizontal {
+    font-size: 0;
+    text-align: left;
+}

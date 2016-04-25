@@ -1,0 +1,8 @@
+.tv-layout {
+    padding-top: 30px;
+}
+
+.tv-layout__item {
+    margin-bottom: 10px;
+    border: 1px solid rgb(240, 240, 240);
+}

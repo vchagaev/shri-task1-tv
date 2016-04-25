@@ -1,0 +1,15 @@
+.tv-channel-show {
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.tv-channel-show__time {
+    float:left;
+    margin-left: 10px;
+}
+
+.tv-channel-show__title {
+    display: block;
+    margin-left: 70px;
+    text-align: left;
+    line-height: 40px;
+}
