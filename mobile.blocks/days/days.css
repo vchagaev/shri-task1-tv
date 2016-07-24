@@ -1,3 +1,7 @@
+.select_align_center {
+    text-align: center;
+}
+
 .days {
     box-sizing: border-box;
     text-align: center;

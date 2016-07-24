@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/phonegap/phonegap-app-hello-world",
   "devDependencies": {
+    "cordova-common": "^1.4.0",
     "gulp-pug": "^3.0.3",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "ios-sim": "^5.0.8",
+    "xcode": "^0.8.9"
   }
 }

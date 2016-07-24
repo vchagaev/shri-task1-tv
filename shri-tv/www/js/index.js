@@ -37,6 +37,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        StatusBar.overlaysWebView(false);
+        StatusBar.styleDefault();
         window.shimIndexedDB.__useShim();
         var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
         var open = indexedDB.open("MyDatabase", 1);
