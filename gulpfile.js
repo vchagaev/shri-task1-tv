@@ -8,7 +8,9 @@ var gulp = require('gulp'),
     htmlToBl = require('html2bl'),
     htmlmin = require('gulp-htmlmin'),
     cssnano = require('gulp-cssnano'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    gutil = require('gulp-util'),
+    pug = require('gulp-pug');
 
 var params = [
     {
@@ -25,19 +27,33 @@ var params = [
         out: 'public/desktop',
         htmlSrc: 'index.html',
         levels: ['mobile.blocks', 'pad.blocks', 'desktop.blocks']
+    },
+    {
+        out: 'shri-tv/www',
+        htmlSrc: 'pg.index.html',
+        levels: ['mobile.blocks']
     }
 ];
 
 var getFileNames = [];
-params.forEach(function (param) {
-    param.fileNames = htmlToBl.getFileNames(param);
-});
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['html', 'css', 'images', 'js']);
+gulp.task('build', ['pug', 'html', 'css', 'images', 'js']);
 
-gulp.task('html', function () {
+gulp.task('pug', function () {
+    return gulp.src('phonegap.pug')
+        .pipe(pug({
+            pretty: true
+        }).on('error', gutil.log))
+        .pipe(rename('pg.index.html'))
+        .pipe(gulp.dest('./'))
+});
+
+gulp.task('html', ['pug'], function () {
+    params.forEach(function (param) {
+        param.fileNames = htmlToBl.getFileNames(param);
+    });
     params.forEach(function (param) {
         gulp.src(param.htmlSrc)
             .pipe(htmlmin({collapseWhitespace: true}))
@@ -63,7 +79,7 @@ gulp.task('html', function () {
     });
 });
 
-gulp.task('css', function () {
+gulp.task('css', ['html'],  function () {
     params.forEach(function (param) {
         param.fileNames.then(function (files) {
                 return gulp.src(files.css)
@@ -79,7 +95,7 @@ gulp.task('css', function () {
     });
 });
 
-gulp.task('images', function () {
+gulp.task('images', ['html'],  function () {
     params.forEach(function (param) {
         param.fileNames.then(function (src) {
                 gulp.src(src.dirs.map(function (dirName) {
@@ -93,7 +109,7 @@ gulp.task('images', function () {
     });
 });
 
-gulp.task('js', function () {
+gulp.task('js', ['html'],  function () {
     params.forEach(function (param) {
         param.fileNames.then(function (src) {
                 return src.dirs.map(function (dirName) {
