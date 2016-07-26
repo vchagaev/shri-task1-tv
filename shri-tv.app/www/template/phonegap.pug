@@ -33,7 +33,7 @@ html(lang='ru')
                                 #uniq14694631568747.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":5}}', role='option', aria-checked='false') 30. Суббота
                                 #uniq14694631568748.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":6}}', role='option', aria-checked='false') 31. Воскресенье
             .main__wrapper
-                .tv-layout.clearfix
+                .tv-layout.clearfix#channels
         .footer
             footer.footer__wrapper
                 .logo.footer__logo
@@ -42,8 +42,9 @@ html(lang='ru')
                         span.logo__letter Я
                         |  Телепрограмма
         script(type='text/javascript', src='cordova.js')
-        script(src='JS/app.js')
+        script(src='js/app.js')
         script(src='template/tv-template.js')
+        script(src='js/dexie.min.js')
         script(src='js/index.js')
         script(type='text/javascript').
             app.initialize();
