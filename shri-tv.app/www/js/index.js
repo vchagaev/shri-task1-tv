@@ -33,7 +33,7 @@ var app = {
         var indexedDB = window.shimIndexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
         //DB init and open
-        var open = indexedDB.open("shri-tv-db2", 1);
+        var open = indexedDB.open("shri-tv-db", 1);
 
         open.onupgradeneeded = function () {
             var db = open.result;
