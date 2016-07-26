@@ -28,24 +28,27 @@ var app = {
         StatusBar.overlaysWebView(false);
         StatusBar.styleDefault();
 
+        const dbName = "channels";
+
         //indexedDB polyfill
         window.shimIndexedDB.__useShim();
-        var indexedDB = window.shimIndexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-
+        var indexedDB = window.shimIndexedDB || window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
         //DB init and open
-        var open = indexedDB.open("shri-tv-db", 1);
+        var open = indexedDB.open("chapai-shri-tv-2016", 1);
 
-        open.onupgradeneeded = function () {
-            var db = open.result;
-            var store = db.createObjectStore("Channels", {keyPath: "id"});
+        open.onupgradeneeded = function (event) {
+            var db = event.target.result;
+            var store = db.createObjectStore(dbName, {keyPath: "id"});
         };
 
-        open.onsuccess = function () {
+        open.onsuccess = function (event) {
             // Start a new transaction
-            var db = open.result;
+
+            var db = event.target.result;
 
             function getStore(db) {
-                return db.transaction("Channels", "readwrite").objectStore("Channels");
+                var tx = db.transaction(dbName, "readwrite");
+                return tx.objectStore(dbName);
             }
 
             /**
@@ -73,6 +76,10 @@ var app = {
                     fillPageFromDb(getStore(db));
                 });
 
+        };
+
+        open.onerror = function (event) {
+            alert(event.target.errorCode);
         };
     }
 };

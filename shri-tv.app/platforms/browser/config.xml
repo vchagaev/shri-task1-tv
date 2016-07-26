@@ -8,10 +8,10 @@
     </feature>
     <name>shri-tv</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Tv-shwos for yandex shri
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="vchagaev@gmail.com">
+        Vladislav Chagaev
     </author>
     <content src="index.html" />
     <icon src="icon.png" />
