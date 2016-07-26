@@ -1,0 +1,53 @@
+doctype
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        meta(name='format-detection', content='telephone=no')
+        meta(name='msapplication-tap-highlight', content='no')
+        //meta(http-equiv='Content-Security-Policy', content="default-src * 'unsafe-inline'; style-src 'self' *.yastatic.net 'unsafe-inline'; media-src *")
+        meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width')
+        link(rel='stylesheet', href='css/styles.css')
+    body.page
+        .header
+            header.header__wrapper
+                .logo.header__logo
+                    span.logo__text
+                        | Тво
+                        span.logo__letter Я
+                        |  Телепрограмма
+        main.main
+            .main__header
+                .main__wrapper.select_align_center
+                    .select.select_mode_radio.select_theme_islands.select_size_xl.i-bem(data-bem='{"select":{"name":"select1"}}')
+                        input.select__control(type='hidden', name='select1', value='2')
+                        button.button.button_size_xl.button_theme_islands.button_checked.button__control.select__button.i-bem(data-bem='{"button":{}}', role='listbox', type='button', aria-owns='uniq14694631568741 uniq14694631568741 uniq14694631568741', aria-labelledby='uniq14694631568742')
+                            span#uniq14694631568742.button__text 25. Понедельник
+                            span.icon.select__tick
+                        .popup.popup_target_anchor.popup_theme_islands.popup_autoclosable.i-bem(data-bem='{"popup":{"directions":["bottom-left","bottom-right","top-left","top-right"]}}', aria-hidden='true')
+                            .menu.menu_size_xl.menu_theme_islands.menu_mode_radio.menu__control.select__menu.i-bem(data-bem='{"menu":{}}')
+                                #uniq14694631568741.menu-item.menu-item_checked.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":1}}', role='option', aria-checked='true') 25. Понедельник
+                                #uniq14694631568743.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":1}}', role='option', aria-checked='false') 26. Вторник
+                                #uniq14694631568744.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":2}}', role='option', aria-checked='false') 27. Среда
+                                #uniq14694631568745.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":3}}', role='option', aria-checked='false') 28. Четверг
+                                #uniq14694631568746.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":4}}', role='option', aria-checked='false') 29. Пятница
+                                #uniq14694631568747.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":5}}', role='option', aria-checked='false') 30. Суббота
+                                #uniq14694631568748.menu-item.menu-item_theme_islands.i-bem(data-bem='{"menu-item":{"val":6}}', role='option', aria-checked='false') 31. Воскресенье
+            .main__wrapper
+                .tv-layout.clearfix#channels
+        .footer
+            footer.footer__wrapper
+                .logo.footer__logo
+                    span.logo__text
+                        | Тво
+                        span.logo__letter Я
+                        |  Телепрограмма
+        script(type='text/javascript', src='cordova.js')
+        script(src='js/indexeddbshim.min.js')
+        script(src='js/app.js')
+        script(src='template/tv-template.js')
+        script(src='js/index.js')
+        script(type='text/javascript').
+            app.initialize();
+
+
+
