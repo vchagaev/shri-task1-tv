@@ -91,28 +91,31 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon height="29" src="www/res/icons/ios/icon-small.png" width="29" />
-    <icon height="58" src="www/res/icons/ios/icon-small-2x.png" width="58" />
-    <icon height="40" src="www/res/icons/ios/icon-40.png" width="40" />
-    <icon height="80" src="www/res/icons/ios/icon-40-2x.png" width="80" />
-    <icon height="50" src="www/res/icons/ios/icon-50.png" width="50" />
-    <icon height="100" src="www/res/icons/ios/icon-50-2x.png" width="100" />
-    <icon height="57" src="www/res/icons/ios/icon.png" width="57" />
-    <icon height="114" src="www/res/icons/ios/icon-2x.png" width="114" />
-    <icon height="60" src="www/res/icons/ios/icon-60.png" width="60" />
-    <icon height="120" src="www/res/icons/ios/icon-60-2x.png" width="120" />
-    <icon height="180" src="www/res/icons/ios/icon-60-3x.png" width="180" />
-    <icon height="72" src="www/res/icons/ios/icon-72.png" width="72" />
-    <icon height="144" src="www/res/icons/ios/icon-72-2x.png" width="144" />
-    <icon height="76" src="www/res/icons/ios/icon-76.png" width="76" />
-    <icon height="152" src="www/res/icons/ios/icon-76-2x.png" width="152" />
-    <splash height="480" src="www/res/screens/ios/screen-iphone-portrait.png" width="320" />
-    <splash height="960" src="www/res/screens/ios/screen-iphone-portrait-2x.png" width="640" />
-    <splash height="1136" src="www/res/screens/ios/screen-iphone-portrait-568h-2x.png" width="640" />
-    <splash height="1334" src="www/res/screens/ios/screen-iphone-portrait-667h.png" width="750" />
-    <splash height="2208" src="www/res/screens/ios/screen-iphone-portrait-736h.png" width="1242" />
-    <splash height="1024" src="www/res/screens/ios/screen-ipad-portrait.png" width="768" />
-    <splash height="2048" src="www/res/screens/ios/screen-ipad-portrait-2x.png" width="1536" />
+    <icon height="180" src="res/icons/ios/icon-60-3x.png" width="180" />
+    <icon height="60" src="res/icons/ios/icon-60.png" width="60" />
+    <icon height="120" src="res/icons/ios/icon-60-2x.png" width="120" />
+    <icon height="76" src="res/icons/ios/icon-76.png" width="76" />
+    <icon height="152" src="res/icons/ios/icon-76-2x.png" width="152" />
+    <icon height="40" src="res/icons/ios/icon-40.png" width="40" />
+    <icon height="80" src="res/icons/ios/icon-40-2x.png" width="80" />
+    <icon height="57" src="res/icons/ios/icon-57.png" width="57" />
+    <icon height="114" src="res/icons/ios/icon-57-2x.png" width="114" />
+    <icon height="72" src="res/icons/ios/icon-72.png" width="72" />
+    <icon height="144" src="res/icons/ios/icon-72-2x.png" width="144" />
+    <icon height="29" src="res/icons/ios/icon-small.png" width="29" />
+    <icon height="58" src="res/icons/ios/icon-small-2x.png" width="58" />
+    <icon height="50" src="res/icons/ios/icon-50.png" width="50" />
+    <icon height="100" src="res/icons/ios/icon-50-2x.png" width="100" />
+    <splash height="480" src="res/screens/ios/screen-iphone-portrait.png" width="320" />
+    <splash height="960" src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" />
+    <splash height="1024" src="res/screens/ios/screen-ipad-portrait.png" width="768" />
+    <splash height="2048" src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" />
+    <splash height="768" src="res/screens/ios/screen-ipad-landscape.png" width="1024" />
+    <splash height="1536" src="res/screens/ios/screen-ipad-landscape-2x.png" width="2048" />
+    <splash height="1136" src="res/screens/ios/screen-iphone-568h-2x.png" width="640" />
+    <splash height="1334" src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" />
+    <splash height="2208" src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" />
+    <splash height="1242" src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />
@@ -131,6 +134,6 @@
     <preference name="CameraUsesGeolocation" value="false" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android:targetSdkVersion" value="23" />
     <preference name="SplashScreenDelay" value="0" />
 </widget>
