@@ -30,47 +30,49 @@ var app = {
 
         //indexedDB polyfill
         window.shimIndexedDB.__useShim();
+        var indexedDB = window.shimIndexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
         //DB init and open
-        var dbName = 'shri-tv';
-        var db = new Dexie(dbName);
-        db.version(1).stores({
-            channels: 'id,channels'
-        });
-        db.open().catch(function (e) {
-            alert ("Open failed: " + e);
-        });
+        var open = indexedDB.open("shri-tv-db2", 1);
 
-        /**
-         * Fill page with tv shows from indexedDB
-         * @param {Dexie} db - Dexie DB
-         */
-        function fillPageFromDb(db) {
-            db.channels.get(1).then(function (row) {
-                if (row) {
+        open.onupgradeneeded = function () {
+            var db = open.result;
+            var store = db.createObjectStore("Channels", {keyPath: "id"});
+        };
+
+        open.onsuccess = function () {
+            // Start a new transaction
+            var db = open.result;
+
+            function getStore(db) {
+                return db.transaction("Channels", "readwrite").objectStore("Channels");
+            }
+
+            /**
+             * Fill page with tv shows from indexedDB
+             * @param store - Channels Store
+             */
+            function fillPageFromDb(store) {
+                var getChannels = store.get(1);
+                getChannels.onsuccess = function () {
                     var wrapper = document.getElementById('channels');
-                    wrapper.innerHTML = template({channels: row.channels});
-                } else {
-                    alert('Не могу получить данные');
-                }
-            });
+                    wrapper.innerHTML = template({channels: getChannels.result.channels});
+                };
+            }
 
+            // Get data from json or just use existing data
+            fetch('https://vchagaev.github.io/shri-task1-tv/mobile/channels.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json) {
+                    getStore(db).put({id: 1, channels: json});
+                    fillPageFromDb(getStore(db));
+                })
+                .catch(function (error) {
+                    fillPageFromDb(getStore(db));
+                });
 
-        }
-
-        // Get data from json or just use existing data
-        fetch('https://vchagaev.github.io/shri-task1-tv/mobile/channels.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (json) {
-                db.channels.put({id: 1, channels: json})
-                    .then(function (){
-                        fillPageFromDb(db);
-                    })
-            })
-            .catch(function (error) {
-                fillPageFromDb(db);
-            });
+        };
     }
 };
