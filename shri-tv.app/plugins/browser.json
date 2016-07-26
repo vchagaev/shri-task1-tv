@@ -13,9 +13,6 @@
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.chapai.shritv"
         },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.chapai.shritv"
-        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.chapai.shritv"
         },
@@ -46,7 +43,13 @@
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.chapai.shritv"
         },
+        "cordova-plugin-indexeddb-async": {
+            "PACKAGE_NAME": "com.chapai.shritv"
+        },
         "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.chapai.shritv"
+        },
+        "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.chapai.shritv"
         },
         "cordova-plugin-network-information": {
@@ -62,9 +65,6 @@
             "PACKAGE_NAME": "com.chapai.shritv"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.chapai.shritv"
-        },
-        "cordova-plugin-indexeddb-async": {
             "PACKAGE_NAME": "com.chapai.shritv"
         }
     },
