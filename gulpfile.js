@@ -44,7 +44,7 @@ gulp.task('build', ['pug', 'html', 'css', 'images', 'js']);
 gulp.task('pug', function () {
     return gulp.src('shri-tv.app/www/template/phonegap.pug')
         .pipe(pug({
-            pretty: true
+            pretty: false
         }).on('error', gutil.log))
         .pipe(rename('phonegap.index.html'))
         .pipe(gulp.dest('shri-tv.app/www/template/'))
@@ -104,8 +104,7 @@ gulp.task('images', ['html'], function () {
     params.forEach(function (param) {
         param.fileNames.then(function (src) {
             gulp.src(src.dirs.map(function (dirName) {
-                var imgGlob = path.resolve(dirName) + '/*.{jpeg,png,svg}';
-                return imgGlob;
+                return path.resolve(dirName) + '/*.{jpeg,png,svg}';
             }))
                 .pipe(gulp.dest(path.join(param.out + '/images/')));
         })
@@ -117,8 +116,7 @@ gulp.task('js', ['html'], function () {
     params.forEach(function (param) {
         param.fileNames.then(function (src) {
             return src.dirs.map(function (dirName) {
-                var jsGlob = path.resolve(dirName) + '/*.js';
-                return jsGlob;
+                return path.resolve(dirName) + '/*.js';
             });
         })
             .then(function (jsGlobs) {
