@@ -20,9 +20,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "html2bl": "git://github.com/dab/html2bl.git"
-  },
-  "dependencies": {
+    "html2bl": "git://github.com/dab/html2bl.git",
     "autoprefixer-core": "^5.2.1",
     "gulp-postcss": "^5.1.9"
   }
