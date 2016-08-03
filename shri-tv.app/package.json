@@ -24,5 +24,8 @@
     "gulp-util": "^3.0.7",
     "ios-sim": "^5.0.8",
     "xcode": "^0.8.9"
+  },
+  "dependencies": {
+    "dexie": "^1.4.1"
   }
 }
